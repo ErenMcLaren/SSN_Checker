@@ -15,19 +15,33 @@ Conversely, it is more likely to ascertain an individual's SSN based on publical
 Though there are many implications entailed with writing a program such as this one, its primary function is to verify that a given SSN is a legitimate one, and if it is, guess possible characteristics about a hypothetical individual to which the number corresponds. The program does not include any other executables that use the scrubbed information to perform "doxxing" or other malicious practices. Should somebody choose to use this program for the purpose of social engineering is not the responsibility of those that wrote the program, and anyone with a beginner-level command of Python can write a similar program.
 
 ## References
+<li>
 <a id = "1">[1]</a>
 Pickett, Carolyn (2009). <a href = "https://www.ssa.gov/policy/docs/ssb/v69n2/v69n2p55.html">"The Story of the Social Security Number"</a>. <i>Social Security Bulletin</i>. Vol. 69 no. 2. United States Social Security Administration. Retrieved August 29, 2020.
+</li>
+<li>
 <a id = "2">[2]</a>
 Kouri, Jim (March 9, 2005). <a href = "https://web.archive.org/web/20120629234649/http://www.americanchronicle.com/articles/view/3911">"Social Security Cards: De Facto National Identification"</a>. <i>American Chronicle</i>. Archived from the original on June 29, 2012. Retrieved August 29, 2020.
+</li>
+<li>
 <a id ="3">[3]</a>
 <a href = "https://www.ssa.gov/employer/randomization.html">"Social Security Number Randomization"</a>. Social Security Administration. Retrieved August 29. 2020.
+</li>
+
+<li>
 <a id = "4">[4]</a>
 <a href = "https://www.ssa.gov/history/ssn/misused.html">"Social Security Cards Issued by Woolworth"</a>. Social Security Administration. Retrieved August 29, 2020.
+</li>
+
+<li>
 <a id = "5"<[5]</a>
 Timmer, John (July 17, 2009). <a href = "https://arstechnica.com/science/2009/07/social-insecurity-numbers-open-to-hacking/">"New algorithm guesses SSNs using date and place of birth".</a> Ars Technica. Retrieved August 29, 2020.
+</li>
+
+<li>
 <a id = "6">[6]</a>
 Acquisti A., Ralph G. (2009) Predicting Social Security numbers from public data <i>PNAS</i> 106 (27) 10975-10980 https://doi.org/10.1073/pnas.0904891106
-<a id = "7">[7]</a>
+</li>
 
 ## Parenthetical
 For how to cite in a Github README.md file: https://stackoverflow.com/a/58693582 
