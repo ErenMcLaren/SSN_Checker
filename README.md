@@ -36,7 +36,7 @@ Kouri, Jim (March 9, 2005). <a href = "https://web.archive.org/web/2012062923464
 </li>
 
 <li>
-<a id = "5"<[5]</a>
+<a id = "5">[5]</a>
 Timmer, John (July 17, 2009). <a href = "https://arstechnica.com/science/2009/07/social-insecurity-numbers-open-to-hacking/">"New algorithm guesses SSNs using date and place of birth".</a> Ars Technica. Retrieved August 29, 2020.
 </li>
 
