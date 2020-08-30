@@ -19,10 +19,12 @@ Though there are many implications entailed with writing a program such as this 
 <a id = "1">[1]</a>
 Pickett, Carolyn (2009). <a href = "https://www.ssa.gov/policy/docs/ssb/v69n2/v69n2p55.html">"The Story of the Social Security Number"</a>. <i>Social Security Bulletin</i>. Vol. 69 no. 2. United States Social Security Administration. Retrieved August 29, 2020.
 </li>
+
 <li>
 <a id = "2">[2]</a>
 Kouri, Jim (March 9, 2005). <a href = "https://web.archive.org/web/20120629234649/http://www.americanchronicle.com/articles/view/3911">"Social Security Cards: De Facto National Identification"</a>. <i>American Chronicle</i>. Archived from the original on June 29, 2012. Retrieved August 29, 2020.
 </li>
+
 <li>
 <a id ="3">[3]</a>
 <a href = "https://www.ssa.gov/employer/randomization.html">"Social Security Number Randomization"</a>. Social Security Administration. Retrieved August 29. 2020.
