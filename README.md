@@ -14,6 +14,22 @@ Conversely, it is more likely to ascertain an individual's SSN based on publical
 
 Though there are many implications entailed with writing a program such as this one, its primary function is to verify that a given SSN is a legitimate one, and if it is, guess possible characteristics about a hypothetical individual to which the number corresponds. The program does not include any other executables that use the scrubbed information to perform "doxxing" or other malicious practices. Should somebody choose to use this program for the purpose of social engineering is not the responsibility of those that wrote the program, and anyone with a beginner-level command of Python can write a similar program.
 
+To use this program, construct a new SSN, and then use its `extract()` method:
+
+```python
+coolguy = SSN("434576832", verbose = True)
+coolguy.extract()
+> 434576832 passed initial scrub.
+> 434576832 passed 9-digit criteron.
+> 434576832 did not match blacklisted SSNs.
+> 434576832 has AAA = 434, GG = 57, SSSS = 6832
+> 434576832 passed area number requirement: Area number did not match blacklisted area numbers.
+> 434576832 passed group number requirement: Group number was not '00'.
+> 434576832 passed serial number requirement: Serial number was not '0000'.
+> 434576832 has AAA = 434 which corresponds to Louisiana.
+> 434576832 has finished scrubbing.
+```
+
 ## References
 <li>
 <a id = "1">[1]</a>
