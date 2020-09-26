@@ -19,15 +19,6 @@ To use this program, construct a new SSN, and then use its `extract()` method:
 ```python
 coolguy = SSN("434576832", verbose = True)
 coolguy.extract()
-> 434576832 passed initial scrub.
-> 434576832 passed 9-digit criteron.
-> 434576832 did not match blacklisted SSNs.
-> 434576832 has AAA = 434, GG = 57, SSSS = 6832
-> 434576832 passed area number requirement: Area number did not match blacklisted area numbers.
-> 434576832 passed group number requirement: Group number was not '00'.
-> 434576832 passed serial number requirement: Serial number was not '0000'.
-> 434576832 has AAA = 434 which corresponds to Louisiana.
-> 434576832 has finished scrubbing.
 ```
 
 ## References
