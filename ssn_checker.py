@@ -103,14 +103,14 @@ class SSN:
         
     def primary_scrub(self):
         if (len(str(self.prospectiveSSN)) >= 10):
-            if self.verbose == True: print("ERROR: That's not an SSN you're entering... Try again.")
+            if self.verbose: print("ERROR: That's not an SSN you're entering... Try again.")
             return False
         else:
-            if self.verbose == True: print(f"{self.prospectiveSSN} passed initial scrub.")
+            if self.verbose: print(f"{self.prospectiveSSN} passed initial scrub.")
             return True
         
     def ensure_true_SSN(self):
-        if self.isLegitimateSSN != True:
+        if not self.isLegitimateSSN:
             return False
         else:
             return True
@@ -118,85 +118,85 @@ class SSN:
     def get_SSN_length(self):
         if len(str(self.prospectiveSSN)) != 9:
             self.isLegitimateSSN = False
-            if self.verbose == True: print(f"ERROR: {self.prospectiveSSN} is not 9 digits long.")        
+            if self.verbose: print(f"ERROR: {self.prospectiveSSN} is not 9 digits long.")        
         else:
             self.isLegitimateSSN = True
             self.trueSSN = str(self.prospectiveSSN)
-            if self.verbose == True: print(f"{self.prospectiveSSN} passed 9-digit criteron.")
+            if self.verbose: print(f"{self.prospectiveSSN} passed 9-digit criteron.")
             return True
     
     def collect_number_info(self):
-        if self.ensure_true_SSN() != True:
+        if not self.ensure_true_SSN():
             return
         else:
             self.area_number, self.group_number, self.serial_number = self.trueSSN[0:3], self.trueSSN[3:5], self.trueSSN[5:9]
-            if self.verbose == True:
+            if self.verbose:
                 print(f"{self.trueSSN} has AAA = {self.area_number}, GG = {self.group_number}, SSSS = {self.serial_number}")
         return self
     
     def check_blacklist_SSNs(self):
-        if self.ensure_true_SSN() != True:
+        if not self.ensure_true_SSN():
             return
         else:
             for item in self.blacklisted:
                 if self.trueSSN == item:
-                    if self.verbose == True:
+                    if self.verbose:
                         print(f"ERROR: SSN matched blacklisted SSN -> {item}.")
-            if self.verbose == True:
+            if self.verbose:
                 print(f"{self.trueSSN} did not match blacklisted SSNs.")
             return True
         
     def scrub_area_number(self):
-        if self.ensure_true_SSN() != True:
+        if not self.ensure_true_SSN():
             return
         else:
             for number in range(900, 1000):
                 if (self.area_number == str(number)):
-                    if self.verbose == True:
+                    if self.verbose:
                         print(f"ERROR: Area number of '{self.area_number}' now allowed in SSNs.")
                         return False
             if (self.area_number == "000") or (self.area_number == "666"):
-                if self.verbose == True:
+                if self.verbose:
                     print(f"ERROR: Area number of '{self.area_number}' cannot be either 000 or 666.")
                     return False
             else:
-                if self.verbose == True:
+                if self.verbose:
                     print(f"{self.trueSSN} passed area number requirement: Area number did not match blacklisted area numbers.")
                 return True
         
     def scrub_group_number(self):
-        if self.ensure_true_SSN() != True:
+        if not self.ensure_true_SSN():
             return
         else:
             if self.group_number == "00":
-                if self.verbose == True:
+                if self.verbose:
                     print(f"ERROR: Group number of '00' not allowed in SSNs.")
                     return False
             else:
-                if self.verbose == True:
+                if self.verbose:
                     print(f"{self.trueSSN} passed group number requirement: Group number was not '00'.")
                 return True
 
     def scrub_serial_number(self):
-        if self.ensure_true_SSN() != True:
+        if not self.ensure_true_SSN():
             return
         else:
             if self.serial_number == "0000":
-                if self.verbose == True:
+                if self.verbose:
                     print(f"ERROR: Serial number of '0000' not allowed in SSNs.")
                     return False
             else:
-                if self.verbose == True:
+                if self.verbose:
                     print(f"{self.trueSSN} passed serial number requirement: Serial number was not '0000'.")
                 return True
             
     def analyze_area_number(self):
-        if self.ensure_true_SSN() != True:
+        if not self.ensure_true_SSN():
             return
         else:
             for state, arrayOfNumbers in self.state_lookup.items():
                 for item in arrayOfNumbers:
                     if int(self.area_number) == item:
-                        if self.verbose == True:
+                        if self.verbose:
                             print(f"{self.trueSSN} has AAA = {self.area_number} which corresponds to {state}.")
                         return True
