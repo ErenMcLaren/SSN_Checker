@@ -1,18 +1,15 @@
-class SSN:
+class SSN():
     
-    def __init__(
-        self, 
-        prospectiveSSN, 
-        verbose = False
-    ):
+    def __init__(self, SSN, verbose = False):
         
-        self.prospectiveSSN   = prospectiveSSN
+        self.prospectiveSSN   = SSN
         self.isLegitimateSSN  = False
         self.trueSSN          = None
         self.area_number      = None
         self.group_number     = None
         self.serial_number    = None
         self.formattedSSN     = None
+        self.hasScrubbed      = False
         self.blacklisted      = [
                                 "072051120", #FWWoolworthAdvertisedSSN
                                 "219099999" #SSNAdvertisementPamplhet
@@ -78,28 +75,34 @@ class SSN:
         
     def extract(self):
         step_one = self.primary_scrub()
-        if step_one != True:
+        if not step_one:
+            self.hasScrubbed = True
             return
         step_two = self.get_SSN_length()
-        if step_two != True:
+        if not step_two:
+            self.hasScrubbed = True
             return
         step_three = self.check_blacklist_SSNs()
-        if step_three != True:
+        if not step_three:
+            self.hasScrubbed = True
             return
         step_four = self.collect_number_info()
         step_five = self.scrub_area_number()
-        if step_five != True:
+        if not step_five:
+            self.hasScrubbed = True
             return
         step_six = self.scrub_group_number()
-        if step_six != True:
+        if not step_six:
+            self.hasScrubbed = True
             return
         step_seven = self.scrub_serial_number()
-        if step_seven != True:
+        if not step_seven:
+            self.hasScrubbed = True
             return
         self.analyze_area_number()
-        if self.verbose == True:
+        if self.verbose:
             print(f"{self.prospectiveSSN} has finished scrubbing.")
-        return
+        return True
         
     def primary_scrub(self):
         if (len(str(self.prospectiveSSN)) >= 10):
@@ -200,3 +203,4 @@ class SSN:
                         if self.verbose:
                             print(f"{self.trueSSN} has AAA = {self.area_number} which corresponds to {state}.")
                         return True
+                
