@@ -1,4 +1,4 @@
-class SSN():
+class SSN:
     
     def __init__(self, SSN, verbose = False):
         
