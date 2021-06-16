@@ -34,7 +34,7 @@ Kouri, Jim (March 9, 2005). <a href = "https://web.archive.org/web/2012062923464
 
 <li>
 <a id ="3">[3]</a>
-<a href = "https://www.ssa.gov/employer/randomization.html">"Social Security Number Randomization"</a>. Social Security Administration. Retrieved August 29. 2020.
+<a href = "https://www.ssa.gov/employer/randomization.html">"Social Security Number Randomization"</a>. Social Security Administration. Retrieved August 29, 2020.
 </li>
 
 <li>
